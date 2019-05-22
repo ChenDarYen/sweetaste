@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="mail-container">
       <div class="slogan text-center text-md-left">
-        <img src="@/assets/img/logo-light.svg" height="40px">
+        <img src="../../static/img/logo-light.svg" height="40px">
         <span>訂閱你我的甜蜜郵件</span>
       </div>
       <div class="input-group">
@@ -16,7 +16,7 @@
     </div>
     <div class="info-container">
       <div class="info-content">
-        <img src="/static/img/logotype-lg-dark.svg" height="26.6px">
+        <img src="../../static/img/logotype-lg-dark.svg" height="26.6px">
         <ul class="list-group">
           <li class="list-group-item">07-1234-5678800</li>
           <li class="list-group-item">sweetaste@email.com</li>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="copyright">
-        <img src="/static/img/sm-今天是個吃甜點的好日子.svg" height="220px" class="d-none d-md-inline-block">
+        <img src="../../static/img/sm-今天是個吃甜點的好日子.svg" height="220px" class="d-none d-md-inline-block">
         <span>© 2019 Sweetaste* All Rights Reserved</span>
       </div>
     </div>

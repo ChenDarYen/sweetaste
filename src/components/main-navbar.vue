@@ -1,13 +1,13 @@
 <template>
 <nav class="navbar navbar-expand-md">
   <router-link class="navbar-brand d-none d-md-inline-block" to="/main">
-    <img src="/static/img/logo-all-dark.svg" height="40px">
+    <img src="../../static/img/logo-all-dark.svg" height="40px">
   </router-link>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
     <i class="fas fa-bars"></i>
   </button>
   <router-link class="navbar-brand d-md-none" to="/main">
-    <img src="/static/img/logotype-sm-dark.svg" height="17.74px">
+    <img src="../../static/img/logotype-sm-dark.svg" height="17.74px">
   </router-link>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav ml-auto">

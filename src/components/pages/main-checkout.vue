@@ -1,7 +1,7 @@
 <template>
   <div class="checkout">
     <div class="background">
-      <img src="/static/img/lg-付款成功.svg">
+      <img src="../../../static/img/lg-付款成功.svg">
       <button class="btn btn-secondary" @click="toDesserts">繼續逛逛</button>
     </div>
   </div>

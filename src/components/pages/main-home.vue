@@ -14,8 +14,8 @@
     </div>
     <Copy class="copy" v-for="(item, index) in copies" :key="index" :copy="item"
     :class="item.direction"/>
-    <img src="/static/img/lg-想吃甜點是不需要理由的.svg" class="quote d-none d-md-block">
-    <img src="/static/img/sm-橫式-想吃甜點是不需要理由的.svg" class="quote d-md-none" height="60px">
+    <img src="../../../static/img/lg-想吃甜點是不需要理由的.svg" class="quote d-none d-md-block">
+    <img src="../../../static/img/sm-橫式-想吃甜點是不需要理由的.svg" class="quote d-md-none" height="60px">
     <div class="windows">
       <Window class="window" v-for="dessert in dessertsDisplay" :key="dessert.id" :dessert="dessert"/>
     </div>
@@ -49,15 +49,15 @@ export default {
       copies: [
         {
           direction: 'right',
-          quoteSm: '/static/img/sm-橫式-為什麼選擇了做甜點.svg',
-          quoteMd: '/static/img/lg-為什麼選擇了做甜點.svg',
+          quoteSm: './static/img/sm-橫式-為什麼選擇了做甜點.svg',
+          quoteMd: './static/img/lg-為什麼選擇了做甜點.svg',
           img: 'http://tinyurl.com/y5wy82h8',
           content: '青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。'
         },
         {
           direction: 'left',
-          quoteSm: '/static/img/sm-橫式-為什麼一定要吃甜點.svg',
-          quoteMd: '/static/img/lg-為什麼一定要吃甜點.svg',
+          quoteSm: './static/img/sm-橫式-為什麼一定要吃甜點.svg',
+          quoteMd: './static/img/lg-為什麼一定要吃甜點.svg',
           img: 'http://tinyurl.com/y6s6f7bw',
           content: '青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。'
         }
