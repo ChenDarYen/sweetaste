@@ -2,7 +2,7 @@
   <div class="desserts">
     <div class="banner">
       <div class="banner-bg" :style="{'background-image': 'url(' + bannerBg + ')'}"></div>
-      <img class="quote" src="/static/img/lg-想吃甜點是不需要理由的.svg">
+      <img class="quote" src="../../../static/img/lg-想吃甜點是不需要理由的.svg">
     </div>
     <div class="content">
       <div class="category">
