@@ -20,7 +20,9 @@
       </thead>
       <tbody>
         <tr v-for="(item) in products"  :key="item.id">
-          <td class="d-none d-md-table-cell"><img :src="item.imageUrl" alt="" class="icon-img"></td>
+          <td class="d-none d-md-table-cell">
+            <div class="img" :style="{'background-image': 'url(' + item.imageUrl + ')'}"></div>
+          </td>
           <td>{{ item.title }}</td>
           <td>{{ item.price | currencyFilter }}</td>
           <td class="d-none d-md-table-cell">{{ item.category }}</td>
@@ -28,7 +30,7 @@
             <span v-if="item.is_enabled" class="text-success">enable</span>
             <span v-else class="text-danger">unable</span>
           </td>
-          <td class="d-flex flex-column d-md-table-cell">
+          <td class="d-flex flex-column d-md-table-cell text-right">
             <button class="btn btn-outline-primary my-1" @click="editProduct(item)">edit</button>
             <button class="btn btn-outline-danger my-1" @click="openDelModal(item)">delete</button>
           </td>
@@ -248,21 +250,24 @@ export default {
 
 <style scoped>
 td{
-    vertical-align: middle
+  vertical-align: middle
 }
 .btn{
-    line-height: 1
+  line-height: 1
 }
-.icon-img{
-    max-height: 60px;
+.img {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background-position: center center;
 }
 .price {
-    min-width: 70px
+  min-width: 70px
 }
 @media(min-width: 768px) {
-    .edit {
-        width: 150px;
-    }
+  .edit {
+    width: 150px;
+  }
 }
 
 </style>

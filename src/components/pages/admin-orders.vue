@@ -91,16 +91,16 @@
               <div class="form-group">
                 <div class="form-group">
                   <h6 class="text-primary font-weight-bold mb-3">商品詳情</h6>
-                  <div v-for="(item, index) in order.products" class="mb-2" :key="index">
-                    <img :src="item.product.imageUrl" alt="" height="50px" class="mr-1">
-                    {{ item.product.title }} * {{ item.qty }}
+                  <div v-for="(item, index) in order.products" class="d-inline-flex align-items-center mb-2" :key="index">
+                    <div class="img" :style="{'background-image': 'url(' + item.product.imageUrl + ')'}"></div>
+                    <span>{{ item.product.title }} * {{ item.qty }}</span>
                   </div>
                 </div>
               </div>
               <hr>
               <div class="form-row">
                 <h6 class="text-primary font-weight-bold mb-3">顧客備註</h6>
-                <span>{{ order.message }}</span>
+                <span class="message">{{ order.message }}</span>
               </div>
             </div>
           </div>
@@ -218,6 +218,15 @@ td div{
   background: white;
   border: 1px solid #eee;
   border-bottom: 1px solid white;
+}
+.img {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center center;
+}
+.message {
+  white-space: pre-wrap;
 }
 @media(min-width: 768px) {
   .time {

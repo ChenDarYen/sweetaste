@@ -1,6 +1,5 @@
 <template>
 <div>
-  <Alert class="message-alert"/>
   <Navbar/>
   <div class="container-fluid">
     <div class="row">
@@ -10,6 +9,7 @@
       </main>
     </div>
   </div>
+  <Alert class="message-alert"/>
 </div>
 </template>
 
