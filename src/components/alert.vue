@@ -2,7 +2,7 @@
   <div class="message-alert">
     <div v-for="(item, i) in messages" :key="i">
       <div class="alert alert-dismissible"
-      :class="'alert-' + item.status" :style="{'width': item.width, 'right': item.right, 'top': `${48*i}px`}">
+      :class="'alert-' + item.status" :style="{'top': `${50*i}px`}">
         {{ item.message }}
         <button type="button" class="close" @click="removeMessage(i)" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -25,11 +25,9 @@ export default {
       this.messages.push({
         message,
         status,
-        width,
-        right,
         timestamp
       })
-      this.removeMessageWithTiming(timestamp)
+      // this.removeMessageWithTiming(timestamp)
     },
     removeMessage (num) {
       this.messages.splice(num, 1)
@@ -53,13 +51,15 @@ export default {
   }
 }
 </script>
-<style scope>
+<style lang="scss" scoped>
 .message-alert {
   width: 100%;
-  position: fixed;
-  top: 0;
 }
-.message-alert div div {
-  z-index: 1100;
+.alert {
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  top: 48px;
+  z-index: 10;
 }
 </style>

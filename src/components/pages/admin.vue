@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Alert/>
+  <Alert class="message-alert"/>
   <Navbar/>
   <div class="container-fluid">
     <div class="row">
@@ -31,6 +31,10 @@ export default {
 }
 </script>
 <style scoped>
+.message-alert {
+  position: fixed;
+  top: 54px;
+}
 .container-fluid {
   width: 100%;
   overflow: hidden;

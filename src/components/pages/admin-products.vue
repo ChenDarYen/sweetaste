@@ -11,9 +11,9 @@
       <thead>
         <tr>
           <th class="d-none d-md-table-cell">PICTURE</th>
+          <th>TITLE</th>
           <th class="price">PRICE</th>
           <th class="d-none d-md-table-cell">CATEGORY</th>
-          <th>TITLE</th>
           <th>ENABLE</th>
           <th class="edit text-center">EDIT</th>
         </tr>
@@ -21,9 +21,9 @@
       <tbody>
         <tr v-for="(item) in products"  :key="item.id">
           <td class="d-none d-md-table-cell"><img :src="item.imageUrl" alt="" class="icon-img"></td>
+          <td>{{ item.title }}</td>
           <td>{{ item.price | currencyFilter }}</td>
           <td class="d-none d-md-table-cell">{{ item.category }}</td>
-          <td>{{ item.title }}</td>
           <td>
             <span v-if="item.is_enabled" class="text-success">enable</span>
             <span v-else class="text-danger">unable</span>
