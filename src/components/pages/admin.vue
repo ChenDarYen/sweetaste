@@ -40,6 +40,6 @@ export default {
   overflow: hidden;
 }
 .main {
-  margin-top: 60px
+  padding-top: 60px
 }
 </style>

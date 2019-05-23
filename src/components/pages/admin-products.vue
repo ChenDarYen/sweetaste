@@ -148,6 +148,7 @@ import $ from 'jquery'
 export default {
   data () {
     return {
+      ajaxOpen: true,
       products: [],
       tempProduct: {},
       isLoading: false,
@@ -170,35 +171,38 @@ export default {
       })
     },
     updateProduct () {
-      const vm = this
-      let httpMethod = 'post'
-      let api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product`
-      let method = '新增'
-      let tempProduct = vm.tempProduct
-      if (tempProduct.new) {
-        httpMethod = 'put'
-        api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product/${tempProduct.id}`
-        method = '修改'
-        delete tempProduct.new
-      } else if (tempProduct.del) {
-        httpMethod = 'delete'
-        api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product/${tempProduct.id}`
-        method = '刪除'
-        delete tempProduct.del
-      }
-      this.$http[httpMethod](api, { data: tempProduct }).then(response => {
-        console.log(response.data)
-        if (response.data.success) {
-          $('#productModal').modal('hide')
-          $('#delProductModal').modal('hide')
-          this.$bus.$emit('message:push', `${method}成功`, 'success')
-          vm.getProducts()
-        } else {
-          $('#productModal').modal('hide')
-          $('#delProductModal').modal('hide')
-          this.$bus.$emit('message:push', response.data.message, 'danger')
+      if (this.ajaxOpen) {
+        this.ajaxOpen = false
+        const vm = this
+        let httpMethod = 'post'
+        let api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product`
+        let method = '新增'
+        let tempProduct = vm.tempProduct
+        if (tempProduct.new) {
+          httpMethod = 'put'
+          api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product/${tempProduct.id}`
+          method = '修改'
+          delete tempProduct.new
+        } else if (tempProduct.del) {
+          httpMethod = 'delete'
+          api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product/${tempProduct.id}`
+          method = '刪除'
+          delete tempProduct.del
         }
-      })
+        this.$http[httpMethod](api, { data: tempProduct }).then(response => {
+          vm.ajaxOpen = true
+          if (response.data.success) {
+            $('#productModal').modal('hide')
+            $('#delProductModal').modal('hide')
+            this.$bus.$emit('message:push', `${method}成功`, 'success')
+            vm.getProducts()
+          } else {
+            $('#productModal').modal('hide')
+            $('#delProductModal').modal('hide')
+            this.$bus.$emit('message:push', response.data.message, 'danger')
+          }
+        })
+      }
     },
     openModal () {
       this.tempProduct = {}

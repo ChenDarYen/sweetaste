@@ -117,6 +117,7 @@ import $ from 'jquery'
 export default {
   data () {
     return {
+      ajaxOpen: true,
       isLoading: false,
       updateLoading: false,
       orders: [],
@@ -152,18 +153,23 @@ export default {
       $('#orderModal').modal('show')
     },
     updateOrder () {
-      const vm = this
-      const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/order/${vm.modifyOrder.id}`
-      vm.updateLoading = true
-      this.$http.put(api, {data: vm.modifyOrder}).then(response => {
-        if (response.data.success) {
-          vm.getOrders(vm.pagination.current_page)
-          vm.order = Object.assign({}, vm.modifyOrder)
-        } else {
-          this.$bus.$emit('message:push', '變更狀態失敗', 'danger')
-        }
-        vm.updateLoading = false
-      })
+      console.log(this.ajaxOpen)
+      if (this.ajaxOpen) {
+        this.ajaxOpen = false
+        const vm = this
+        const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/order/${vm.modifyOrder.id}`
+        vm.updateLoading = true
+        this.$http.put(api, {data: vm.modifyOrder}).then(response => {
+          vm.ajaxOpen = true
+          if (response.data.success) {
+            vm.getOrders(vm.pagination.current_page)
+            vm.order = Object.assign({}, vm.modifyOrder)
+          } else {
+            this.$bus.$emit('message:push', '變更狀態失敗', 'danger')
+          }
+          vm.updateLoading = false
+        })
+      }
     },
     changeSitua (num) {
       this.situa = num

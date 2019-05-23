@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark flex-md-nowrap p-0 shadow">
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark flex-md-nowrap shadow">
   <router-link class="navbar-brand text-center px-2" to="main">Sweetaste</router-link>
   <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarCollapse">
     <span class="navbar-toggler-icon"></span>
@@ -46,3 +46,15 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import '../assets/all';
+
+nav {
+  padding: 7px;
+}
+@include md {
+  nav {
+    padding: 0 !important;
+  }
+}
+</style>
