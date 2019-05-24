@@ -65,7 +65,7 @@
         </button>
       </div>
     </div>
-    <div class="information">
+    <div class="information d-none d-md-inline-block">
       <div class="info-item">
         <h2>訂單摘要</h2>
         <div class="content">
@@ -116,6 +116,7 @@ export default {
   },
   data () {
     return {
+      ajaxOpen: true,
       confirm: false,
       deliveryData: {
         user: {
@@ -126,7 +127,8 @@ export default {
           address: ''
         },
         message: ''
-      }
+      },
+      orderId: ''
     }
   },
   methods: {
@@ -134,17 +136,28 @@ export default {
       this.$emit('changeSituation', situation)
     },
     confirmOrder () {
-      const vm = this
-      this.$validator.validate().then(result => {
-        if (result) {
-          vm.confirm = true
-        }
-      })
+      if (this.ajaxOpen) {
+        this.ajaxOpen = false
+        const vm = this
+        this.$validator.validate().then(result => {
+          if (result) {
+            const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/order`
+            this.$http.post(api, {data: this.deliveryData}).then(response => {
+              if (response.data.success) {
+                vm.orderId = response.data.orderId
+                vm.confirm = true
+                vm.ajaxOpen = true
+              }
+            })
+          }
+        })
+      }
     },
     paidOrder () {
+      this.ajaxOpen = false
       const vm = this
-      const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/order`
-      this.$http.post(api, {data: this.deliveryData}).then(response => {
+      const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/pay/${this.orderId}`
+      this.$http.post(api).then(response => {
         if (response.data.success) {
           vm.$router.push({path: '/main/checkout'})
         }

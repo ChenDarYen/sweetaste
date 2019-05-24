@@ -13,7 +13,7 @@ import Delivery from '@/components/main-cart-delivery'
 export default {
   data () {
     return {
-      situation: 'delivery',
+      situation: 'cart',
       cart: {
         delivery: 100,
         total: 0,
@@ -45,6 +45,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../../assets/all';
+
 .cart-container, .cart-content, .order-content, h2, .img, .cart, .cart-item, .cart-total, .dessert-qty, .order, .btn {
   width: 100%;
 }

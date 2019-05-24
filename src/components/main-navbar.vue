@@ -36,8 +36,9 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/all';
 
-nav {
+.navbar {
   padding: $sm-spacer !important;
+  background-color: #ffffff;
   position: relative
 }
 .navbar-brand {

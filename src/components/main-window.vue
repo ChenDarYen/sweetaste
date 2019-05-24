@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div class="img-container">
-      <div class="img" :style="{'background-image': 'url(' + dessert.imageUrl + ')'}"></div>
-      <div class="filter"></div>
-      <div class="category" v-if="dessert.category">{{ dessert.category }}</div>
+    <div class="content" @click="directToDessert(dessert.id)" :title="dessert.title">
+      <div class="img-container">
+        <div class="img" :style="{'background-image': 'url(' + dessert.imageUrl + ')'}"></div>
+        <div class="filter"></div>
+        <div class="category" v-if="dessert.category">{{ dessert.category }}</div>
+      </div>
+      <div class="title">{{ dessert.title }}</div>
+      <div class="price">{{ dessert.price | currencyFilter }}</div>
     </div>
-    <div class="title">{{ dessert.title }}</div>
-    <div class="price">{{ dessert.price | currencyFilter }}</div>
     <button class="btn btn-light" @click="addToCart(dessert)">加入購物車</button>
   </div>
 </template>
@@ -39,6 +41,9 @@ export default {
           vm.$bus.$emit('cart:update')
         }
       })
+    },
+    directToDessert (id) {
+      this.$router.push({path: `/main/dessert/${id}`})
     }
   }
 }
@@ -48,6 +53,9 @@ export default {
 
 .image-container, .img, .filter, .btn {
   width: 100%;
+}
+.content {
+  cursor: pointer;
 }
 .img-container {
   padding-bottom: 100%;
@@ -87,6 +95,9 @@ export default {
   text-align: center;
   border: 1px solid $light;
   float: left;
+}
+.title:hover {
+  text-decoration: underline;
 }
 .btn {
   color: $primary;

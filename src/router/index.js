@@ -6,6 +6,7 @@ import VueAxios from 'vue-axios'
 import Main from '@/components/pages/main'
 import MainHome from '@/components/pages/main-home'
 import MainDesserts from '@/components/pages/main-desserts'
+import MainDessert from '@/components/pages/main-dessert'
 import MainCart from '@/components/pages/main-cart'
 import MainCheckout from '@/components/pages/main-checkout'
 import Admin from '@/components/pages/admin'
@@ -35,6 +36,11 @@ export default new Router({
           path: 'desserts',
           name: 'MainDesserts',
           component: MainDesserts
+        },
+        {
+          path: 'dessert/:dessert_id',
+          name: 'MainDessert',
+          component: MainDessert
         },
         {
           path: 'cart',

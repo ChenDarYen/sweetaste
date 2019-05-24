@@ -1,7 +1,9 @@
 <template>
   <div>
-    <Navbar/>
-    <router-view></router-view>
+    <nav is="Navbar" class="navbar"></nav>
+    <main>
+      <router-view></router-view>
+    </main>
     <Footer/>
     <Alert class="message-alert"/>
   </div>
@@ -24,6 +26,15 @@ export default {
 }
 </script>
 <style scoped>
+.navbar {
+  width: 100%;
+  position: fixed !important;
+  top: 0;
+  z-index: 20;
+}
+main {
+  margin-top: 100px;
+}
 .message-alert {
   position: fixed;
   top: 100px;

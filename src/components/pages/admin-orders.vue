@@ -153,7 +153,6 @@ export default {
       $('#orderModal').modal('show')
     },
     updateOrder () {
-      console.log(this.ajaxOpen)
       if (this.ajaxOpen) {
         this.ajaxOpen = false
         const vm = this
