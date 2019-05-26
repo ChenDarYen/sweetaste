@@ -61,16 +61,12 @@ h2 {
 }
 .cart {
   padding: 0 $sm-spacer;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  @include flex-wrap(flex-start);
   position: relative;
 }
 .cart-item {
   margin-top: $sm-spacer;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  @include flex-wrap;
 }
 .img-container {
   width: 50%;
@@ -79,16 +75,12 @@ h2 {
 }
 .img {
   height: 100%;
-  background-size: cover;
-  background-position: center center;
+  @include bg-cover;
   position: absolute;
 }
 .dessert-info {
   width: calc(50% - 1rem);
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  @include flex-wrap($j-c: column, $a-i: flex-start);
 }
 .dessert-title {
   font-size: 1.25rem;
@@ -120,9 +112,7 @@ h2 {
   margin-top: $sm-spacer;
   .order {
     padding: 0 $sm-spacer;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    @include flex-wrap;
     h2 {
       margin-bottom: .5rem;
     }
@@ -143,17 +133,13 @@ h2 {
     line-height: 3.75rem;
   }
   .btn {
-    color: $primary;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 4rem;
+    @include standard-btn;
   }
 }
 @include md {
   .cart-container {
     padding: $md-spacer;
-    display: inline-flex;
-    justify-content: space-between;
+    @include flex-wrap;
   }
   .cart-content {
     width: calc(100% - 270px);

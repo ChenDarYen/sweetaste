@@ -63,8 +63,7 @@ export default {
 }
 .img {
   height: 100%;
-  background-size: cover;
-  background-position: center center;
+  @include bg-cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -100,9 +99,6 @@ export default {
   text-decoration: underline;
 }
 .btn {
-  color: $primary;
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 4rem;
+  @include standard-btn;
 }
 </style>

@@ -115,12 +115,10 @@ export default {
 }
 .banner-bg {
   height: 73vw;
-  background-size: cover;
-  background-position: center center;
+  @include bg-cover;
 }
 .banner-nav {
-  display: inline-flex;
-  justify-content: space-between;
+  @include flex-wrap;
 }
 .banner-nav-item {
   width: 33.1%;
@@ -184,8 +182,7 @@ export default {
   }
   .windows {
     padding: 0 $md-spacer;
-    display: inline-flex;
-    justify-content: space-between;
+    @include flex-wrap;
     .window {
       width: 45vw;
       margin-bottom: $md-spacer;

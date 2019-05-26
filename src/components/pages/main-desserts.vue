@@ -118,8 +118,7 @@ export default {
 }
 .banner-bg {
   height: 100%;
-  background-size: cover;
-  background-position: center center;
+  @include bg-cover;
 }
 .quote {
   width: 60px;
@@ -165,8 +164,7 @@ export default {
   }
   .content {
     margin-top: 60px;
-    display: inline-flex;
-    justify-content: space-between
+    @include flex-wrap;
   }
   .category {
     width: 250px;
@@ -174,9 +172,7 @@ export default {
   .windows {
     width: calc(100% - 270px);
     padding: 0 0 $md-spacer;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: flex-start
+    @include flex-wrap(flex-start);
   }
   .window {
     width: calc(50% - 10px);

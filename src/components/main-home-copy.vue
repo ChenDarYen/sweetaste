@@ -45,8 +45,7 @@ export default {
   .dessert-img {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center center;
+    @include bg-cover;
     position: absolute
   }
   .content {
@@ -65,10 +64,7 @@ export default {
   .copy {
     margin-top: 60px;
     padding: 0 $md-spacer;
-    display: inline-flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include flex-wrap($f-d: row-reverse, $a-i: flex-start);
     position: relative;
     .img-container {
       width: 45vw;

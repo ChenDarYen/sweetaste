@@ -70,8 +70,7 @@ export default {
 }
 .img {
   height: 100%;
-  background-size: cover;
-  background-position: center center;
+  @include bg-cover;
   position: absolute;
 }
 .info {
@@ -96,10 +95,7 @@ h3 {
 }
 .btn {
   padding: 0;
-  color: $primary;
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 4rem;
+  @include standard-btn;
   position: absolute;
   bottom: -4rem;
   left: 0;
@@ -118,9 +114,7 @@ h3 {
 @include md {
   .dessert {
     padding: $md-spacer $md-spacer 0;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    @include flex-wrap;
   }
   .img-container {
     width: calc(50% - 10px);

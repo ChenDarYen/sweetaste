@@ -25,8 +25,7 @@ export default {
   margin-bottom: 4rem;
   height: calc(100vh - 176px);
   background-image: url('http://tinyurl.com/y59rscuq');
-  background-size: cover;
-  background-position: center center;
+  @include bg-cover;
   position: relative;
   img {
     height: 45px;
@@ -35,10 +34,8 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  button {
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 4rem;
+  .btn {
+    @include standard-btn;
     position: relative;
     left: 0;
     top: 100%;

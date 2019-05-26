@@ -43,9 +43,7 @@
 
 .footer, .mail-container, .info-container, .copyright {
   width: 100%;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-between
+  @include flex-wrap;
 }
 .mail-container {
   padding: $sm-spacer;
@@ -117,8 +115,7 @@ ul {
   }
   .copyright {
     margin-top: 0;
-    flex-direction: column;
-    align-items: flex-end
+    @include flex-wrap($f-d: column, $a-i: flex-end);
   }
 }
 @include lg {

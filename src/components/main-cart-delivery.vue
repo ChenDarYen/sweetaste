@@ -178,9 +178,7 @@ export default {
   padding: $sm-spacer;
   color: $light;
   background-color: $primary;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  @include flex-wrap;
 }
 h1 {
   font-size: 2rem;
@@ -215,12 +213,10 @@ input, textarea {
 }
 .btn-container {
   line-height: 2rem;
-  display: inline-flex;
+  @include flex-wrap;
 }
 .btn {
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 4rem;
+  @include standard-btn;
 }
 .btn-unconfirm {
   width: 50%;
@@ -234,8 +230,7 @@ input, textarea {
 @include md {
   .delivery-container {
     padding: $md-spacer;
-    display: inline-flex;
-    justify-content: space-between;
+    @include flex-wrap;
   }
   .delivery {
     width: calc(100% - 320px);
@@ -258,9 +253,7 @@ input, textarea {
   .content {
     padding: 1rem;
     border: 1px solid $light;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    @include flex-wrap;
   }
   .subtitle, .amount {
     line-height: 1.875rem;
@@ -284,15 +277,12 @@ input, textarea {
     }
   }
   .cart-item {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
+    @include flex-wrap(flex-start, center);
   }
   .img {
     width: 120px;
     height: 80px;
-    background-size: cover;
-    background-position: center center;
+    @include bg-cover;
     margin-right: 20px;
   }
   .dessert-title {
