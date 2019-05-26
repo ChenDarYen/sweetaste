@@ -5,7 +5,7 @@
       <div class="banner-nav">
         <div v-for="(item, index) in banner.nav" :key="index" class="banner-nav-item"
         :class="{'active': item.category === category}"
-        @click="category = item.category">
+        @click="directToWindows(); category = item.category">
           <div class="background" :style="{'background-image': 'url(' + item.img + ')'}"></div>
           <div class="filter"></div>
           <div class="category">{{ item.category }}</div>
@@ -22,6 +22,7 @@
   </div>
 </template>
 <script>
+import $ from 'jquery'
 import Copy from '@/components/main-home-copy'
 import Window from '@/components/main-window'
 
@@ -90,6 +91,10 @@ export default {
           vm.filtDesserts(page + 2)
         }
       }
+    },
+    directToWindows () {
+      let windowsPos = $('.window').offset().top
+      $('html, body').animate({scrollTop: windowsPos - 100}, 1000)
     }
   },
   watch: {
@@ -134,7 +139,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity .5s;
+    transition: all .5s;
   }
   &:hover .filter {
     opacity: .95;
