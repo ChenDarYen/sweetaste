@@ -91,7 +91,7 @@
               <div class="form-group">
                 <div class="form-group">
                   <h6 class="text-primary font-weight-bold mb-3">商品詳情</h6>
-                  <div v-for="(item, index) in order.products" class="d-inline-flex align-items-center mb-2" :key="index">
+                  <div v-for="(item, index) in order.products" class="dessert-info d-inline-flex align-items-center mb-2" :key="index">
                     <div class="img" :style="{'background-image': 'url(' + item.product.imageUrl + ')'}"></div>
                     <span>{{ item.product.title }} * {{ item.qty }}</span>
                   </div>
@@ -189,7 +189,7 @@ table {
   border-collapse: collapse;
 }
 td{
-  vertical-align: middle
+  vertical-align: middle !important;
 }
 td div{
   padding:5px 0px;
@@ -229,8 +229,11 @@ td div{
 .img {
   width: 50px;
   height: 50px;
-  background-size: cover;
-  background-position: center center;
+  margin-right: 10px;
+  @include bg-cover;
+}
+.dessert-info, .message {
+  width: 100%;
 }
 .message {
   white-space: pre-wrap;

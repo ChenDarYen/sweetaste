@@ -38,6 +38,7 @@
       </tbody>
     </table>
     <Pagination
+    class="mb-5"
     :pagination="pagination" @getInform="getProducts"/>
     <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -255,7 +256,7 @@ export default {
 @import '../../assets/all';
 
 td{
-  vertical-align: middle
+  vertical-align: middle !important;
 }
 .btn{
   @include admin-btn;
