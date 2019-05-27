@@ -52,6 +52,9 @@ export default {
 nav {
   padding: 7px;
 }
+.btn {
+  @include admin-btn;
+}
 @include md {
   nav {
     padding: 0 !important;

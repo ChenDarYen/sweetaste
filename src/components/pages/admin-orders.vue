@@ -182,7 +182,9 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import '../../assets/all';
+
 table {
   border-collapse: collapse;
 }
@@ -193,7 +195,7 @@ td div{
   padding:5px 0px;
 }
 .btn{
-  line-height: 1
+  @include admin-btn;
 }
 .form-control-sm {
   font-size: 12px;

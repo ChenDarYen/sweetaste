@@ -251,13 +251,14 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import '../../assets/all';
 
-<style scoped>
 td{
   vertical-align: middle
 }
 .btn{
-  line-height: 1
+  @include admin-btn;
 }
 .img {
   height: 60px;
