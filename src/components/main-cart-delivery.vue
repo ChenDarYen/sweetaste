@@ -47,7 +47,7 @@
           <label for="message">備註</label>
           <textarea id="message" class="form-control"
           v-if="!confirm" v-model="deliveryData.message" rows="5"></textarea>
-          <span class="confirm" v-if="confirm">{{ deliveryData.user.message }}</span>
+          <span class="confirm" v-if="confirm">{{ deliveryData.message }}</span>
         </div>
       </div>
       <div class="btn-container">
@@ -147,6 +147,7 @@ export default {
                 vm.orderId = response.data.orderId
                 vm.confirm = true
                 vm.ajaxOpen = true
+                vm.$bus.$emit('cart:update')
               }
             })
           }

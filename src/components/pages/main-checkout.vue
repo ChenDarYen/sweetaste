@@ -36,7 +36,7 @@ export default {
   }
   .btn {
     @include standard-btn;
-    position: relative;
+    position: absolute;
     left: 0;
     top: 100%;
   }
@@ -50,7 +50,7 @@ export default {
     img {
       top: 40%;
     }
-    button {
+    .btn {
       width: 32%;
       top: 55%;
       left: 50%;
